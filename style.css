@@ -19,7 +19,6 @@ h1, h2, h3 {
     background-size: 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 1.2rem;
     animation: reflejoOro 6s ease-in-out infinite;
     text-shadow: 0 0 8px rgba(255, 215, 0, 0.25);
 }
