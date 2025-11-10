@@ -1,4 +1,4 @@
-/* style.css COMPLETO */
+/* style.css COMPLETO Y MEJORADO */
 * {
     margin: 0;
     padding: 0;
@@ -15,14 +15,15 @@ body {
 
 /* ✨ EFECTO DORADO METÁLICO */
 h1, h2, h3, p, a, .boton, .servicio i {
-    background: linear-gradient(90deg, #b8860b, #ffd700, #f5e19c, #b8860b);
-    background-size: 300%;
+    background: linear-gradient(90deg, #b8860b, #ffd700, #fff4b1, #d4af37, #b8860b);
+    background-size: 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: brilloOro 8s linear infinite;
+    animation: reflejoOro 6s ease-in-out infinite;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.25);
 }
 
-@keyframes brilloOro {
+@keyframes reflejoOro {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
@@ -129,7 +130,16 @@ nav a:hover {
     box-shadow: 0 6px 14px rgba(0,0,0,0.4); 
 }
 
-/* Íconos de los servicios */
+/* 💰 Precios verdes con brillo */
+.servicio .precio { 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    color: #00e676; 
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(0, 230, 118, 0.35);
+}
+
+/* Íconos */
 .servicio i { 
     font-size: 2.2rem;
     margin-bottom: 10px;
