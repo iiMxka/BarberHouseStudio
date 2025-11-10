@@ -1,4 +1,4 @@
-/* style.css COMPLETO Y MEJORADO */
+/* style.css COMPLETO Y MEJORADO (Títulos dorados, texto blanco) */
 * {
     margin: 0;
     padding: 0;
@@ -9,12 +9,12 @@ body {
     font-family: 'merriweather', serif;
     margin: 0;
     background-color: #111;
-    color: #e0b05c;
+    color: #fff; /* Texto general en blanco */
     padding-top: 70px;
 }
 
-/* ✨ EFECTO DORADO METÁLICO */
-h1, h2, h3, p, a, .boton, .servicio i {
+/* ✨ EFECTO DORADO METÁLICO SOLO EN TÍTULOS */
+h1, h2, h3 {
     background: linear-gradient(90deg, #b8860b, #ffd700, #fff4b1, #d4af37, #b8860b);
     background-size: 400%;
     -webkit-background-clip: text;
@@ -80,29 +80,40 @@ nav a:hover {
 
 .hero p {
     font-size: 1.2em;
+    color: #fff; /* Blanco */
 }
 
+/* Botón agendar cita */
 .boton {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 25px;
-    background-color: #e0b05c;
-    color: #000;
+    background: linear-gradient(90deg, #b8860b, #ffd700, #d4af37, #b8860b);
+    background-size: 300%;
+    border: none;
     border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
+    color: #000;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    animation: brilloBoton 4s linear infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+@keyframes brilloBoton {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .boton:hover {
-    background-color: #fff;
-    color: #000;
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
 }
 
 /* Servicios */
 #servicios { 
     background-color: #111; 
-    color: #fff; 
     padding: 60px 20px; 
     text-align: center; 
 }
@@ -139,10 +150,14 @@ nav a:hover {
     text-shadow: 0 0 8px rgba(0, 230, 118, 0.35);
 }
 
-/* Íconos */
+/* ⚪ Íconos blancos sin brillo */
 .servicio i { 
     font-size: 2.2rem;
     margin-bottom: 10px;
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+    background: none;
+    text-shadow: none;
 }
 
 /* Contacto */
@@ -195,7 +210,7 @@ nav a:hover {
     transform: scale(1.02);
 }
 
-/* Estilos del botón */
+/* Estilos del botón del formulario */
 #formCita button {
     display: flex;
     align-items: center;
