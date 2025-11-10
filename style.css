@@ -6,11 +6,26 @@
 }
 
 body {
-    font-family: 'Merriweather', serif;
+    font-family: 'merriweather', serif;
     margin: 0;
     background-color: #111;
-    color: #fff;
-    padding-top: 100px; /* Ajuste para header fijo */
+    color: #e0b05c;
+    padding-top: 70px;
+}
+
+/* ✨ EFECTO DORADO METÁLICO */
+h1, h2, h3, p, a, .boton, .servicio i {
+    background: linear-gradient(90deg, #b8860b, #ffd700, #f5e19c, #b8860b);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: brilloOro 8s linear infinite;
+}
+
+@keyframes brilloOro {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Header */
@@ -33,7 +48,7 @@ header {
 }
 
 header h1 {
-    color: #e0b05c;
+    font-weight: bold;
 }
 
 nav a {
@@ -41,10 +56,12 @@ nav a {
     margin-left: 20px;
     text-decoration: none;
     font-weight: 500;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: #e0b05c;
+    text-shadow: 0 0 6px rgba(224,176,92,0.5);
 }
 
 /* Hero */
@@ -112,22 +129,10 @@ nav a:hover {
     box-shadow: 0 6px 14px rgba(0,0,0,0.4); 
 }
 
-.servicio h3 { 
-    color: #f0c040; 
-    margin-bottom: 10px; 
-}
-
-.servicio .precio { 
-    font-size: 1.2rem; 
-    font-weight: bold; 
-    color: #00e676; 
-    margin-bottom: 10px; 
-}
-
+/* Íconos de los servicios */
 .servicio i { 
-    font-size: 2.2rem; 
-    color: #e0b05c; 
-    margin-bottom: 10px; 
+    font-size: 2.2rem;
+    margin-bottom: 10px;
 }
 
 /* Contacto */
@@ -146,7 +151,6 @@ nav a:hover {
 }
 
 .formulario-cita h2 { 
-    color: #e0b05c; 
     font-size: 2rem; 
     margin-bottom: 10px; 
     text-transform: uppercase; 
@@ -181,61 +185,7 @@ nav a:hover {
     transform: scale(1.02);
 }
 
-/* Estilos específicos para el select de horas */
-#hora {
-    width: 100%;
-    max-width: 400px;
-    padding: 12px;
-    border: 2px solid #e0b05c;
-    border-radius: 8px;
-    background: #1c1c1c;
-    color: #fff;
-    font-size: 1rem;
-    outline: none;
-    transition: box-shadow 0.3s, transform 0.2s;
-}
-
-#hora:focus {
-    box-shadow: 0 0 8px #e0b05c;
-    transform: scale(1.02);
-}
-
-/* Estados del select de horas */
-#hora option {
-    background: #1c1c1c;
-    color: #fff;
-    padding: 10px;
-}
-
-#hora option:disabled {
-    color: #777 !important;
-    background: #333 !important;
-    font-style: italic;
-}
-
-#hora option[disabled] {
-    color: #777;
-    background: #222;
-    opacity: 0.7;
-}
-
-/* Estado de "Cargando..." */
-#hora:disabled {
-    opacity: 0.7;
-    background: #2a2a2a;
-    border-color: #777;
-}
-
-/* Mensaje de estado del formulario */
-#estado {
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    min-height: 20px;
-    margin-top: 15px;
-}
-
+/* Estilos del botón */
 #formCita button {
     display: flex;
     align-items: center;
@@ -259,7 +209,7 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* Mejoras responsive */
+/* Responsive */
 @media (max-width: 768px) {
     body {
         padding-top: 120px;
@@ -289,31 +239,4 @@ nav a:hover {
     .hero h2 {
         font-size: 2em;
     }
-}
-
-/* Estilos para cuando no hay horas disponibles */
-#hora option[value=""] {
-    color: #e0b05c;
-    font-style: italic;
-}
-
-/* Loading state visual mejorado */
-.cargando {
-    color: #e0b05c !important;
-    font-style: italic;
-}
-
-/* Estados de éxito y error */
-.estado-exito {
-    color: #00e676;
-    background-color: rgba(0, 230, 118, 0.1);
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.estado-error {
-    color: #ff5252;
-    background-color: rgba(255, 82, 82, 0.1);
-    padding: 10px;
-    border-radius: 5px;
 }
