@@ -13,20 +13,31 @@ body {
     padding-top: 70px;
 }
 
-/* ✨ EFECTO DORADO METÁLICO */
+/* 🌈 EFECTO RGB ANIMADO */
 h1, h2, h3, p, a, .boton, .servicio i {
-    background: linear-gradient(90deg, #b8860b, #ffd700, #fff4b1, #d4af37, #b8860b);
+    background: linear-gradient(90deg, 
+        #ff0000, 
+        #ff7300, 
+        #fffb00, 
+        #48ff00, 
+        #00ffd5, 
+        #002bff, 
+        #7a00ff, 
+        #ff00c8, 
+        #ff0000);
     background-size: 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: reflejoOro 6s ease-in-out infinite;
-    text-shadow: 0 0 8px rgba(255, 215, 0, 0.25);
+    animation: rgbFlujo 8s linear infinite;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
-@keyframes reflejoOro {
+@keyframes rgbFlujo {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
 }
 
 /* Header */
