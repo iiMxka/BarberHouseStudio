@@ -1,4 +1,4 @@
-/* style.css COMPLETO Y MEJORADO CON BOTÓN VISUAL */
+/* 🎨 style.css COMPLETO Y MEJORADO FINAL */
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
 }
 
 /* ✨ EFECTO DORADO METÁLICO */
-h1, h2, h3, p, a, .servicio i {
+h1, h2, h3, p, a {
     background: linear-gradient(90deg, #b8860b, #ffd700, #fff4b1, #d4af37, #b8860b);
     background-size: 400%;
     -webkit-background-clip: text;
@@ -82,40 +82,60 @@ nav a:hover {
     font-size: 1.2em;
 }
 
-/* 🔘 BOTÓN AGENDAR CITA MEJORADO Y CENTRADO */
+/* 🟡 BOTÓN AGENDAR CITA RGB MINIMALISTA */
 .boton {
+    position: relative;
     display: inline-block;
     margin-top: 25px;
     padding: 14px 40px;
-    border-radius: 50px; /* borde circular */
+    border-radius: 50px;
     font-weight: bold;
     text-decoration: none;
     color: #fff;
-    background: linear-gradient(90deg, #b8860b, #ffd700, #d4af37, #b8860b);
-    background-size: 300%;
-    animation: brilloBoton 4s linear infinite;
-    border: none; /* quitamos el marco cuadrado */
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: #111;
+    overflow: hidden;
+    transition: 0.3s;
+    border: none;
+    z-index: 1;
 }
 
-@keyframes brilloBoton {
+/* 🔥 Borde RGB animado */
+.boton::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet, red);
+    background-size: 400%;
+    z-index: -1;
+    animation: rgbBorde 4s linear infinite;
+    filter: blur(3px);
+}
+
+/* Fondo interno negro con glow */
+.boton::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #111;
+    border-radius: 50px;
+    z-index: -1;
+}
+
+/* Efecto hover */
+.boton:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Animación RGB */
+@keyframes rgbBorde {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-}
-
-.boton:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
-}
-
-.boton:hover {
-    background: #e0b05c;
-    color: #000;
-    transform: scale(1.08);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
 
 /* Servicios */
