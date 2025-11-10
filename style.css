@@ -82,27 +82,33 @@ nav a:hover {
     font-size: 1.2em;
 }
 
-/* 🟡 BOTÓN AGENDAR CITA CON MARCO Y EFECTO METÁLICO */
+/* 🔘 BOTÓN AGENDAR CITA MEJORADO Y CENTRADO */
 .boton {
     display: inline-block;
     margin-top: 25px;
-    padding: 14px 35px;
-    border-radius: 30px;
+    padding: 14px 40px;
+    border-radius: 50px; /* borde circular */
     font-weight: bold;
     text-decoration: none;
-    background: linear-gradient(145deg, #111, #222);
     color: #fff;
-    border: 2px solid transparent;
-    border-image: linear-gradient(90deg, #ffd700, #f5e19c, #b8860b, #ffd700) 1;
-    animation: bordeOro 4s linear infinite;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+    background: linear-gradient(90deg, #b8860b, #ffd700, #d4af37, #b8860b);
+    background-size: 300%;
+    animation: brilloBoton 4s linear infinite;
+    border: none; /* quitamos el marco cuadrado */
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-@keyframes bordeOro {
-    0% { border-image: linear-gradient(90deg, #ffd700, #f5e19c, #b8860b) 1; }
-    50% { border-image: linear-gradient(270deg, #ffd700, #f5e19c, #b8860b) 1; }
-    100% { border-image: linear-gradient(90deg, #ffd700, #f5e19c, #b8860b) 1; }
+@keyframes brilloBoton {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.boton:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
 }
 
 .boton:hover {
